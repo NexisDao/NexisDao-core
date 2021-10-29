@@ -1,0 +1,362 @@
+{
+    
+    "contracts": [
+        {
+            "name": "config",
+            "mode": "default",
+            "file": "config"
+        },
+        {
+            "name": "token",
+            "mode": "default",
+            "file": "token"
+        },
+        {
+            "name": "debt",
+            "mode": "default",
+            "file": "debt"
+        },
+        {
+            "name": "cdp",
+            "mode": "default",
+            "file": "cdp"
+        },
+        {
+            "name": "auction",
+            "mode": "default",
+            "file": "auction"
+        },
+        {
+            "name": "burn_lock",
+            "mode": "default",
+            "file": "burn_lock"
+        },
+        {
+            "name": "type_lock",
+            "mode": "default",
+            "file": "type_lock"
+        },
+        {
+            "name": "sys_debt",
+            "mode": "default",
+            "file": "sys_debt"
+        }
+    ],
+    "script_list": [
+        {
+            "name": "config_hash",
+            "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+            "code_hash": "{{config}}",
+            "hash_type": ""
+        },
+        {
+            "name": "udt_args",
+            "args": "0x1234567890",
+            "code_hash": "{{always_success}}",
+            "hash_type": ""
+        },
+        {
+            "name": "user_UDT",
+            "args": "{{udt_args}}",
+            "code_hash": "{{token}}",
+            "hash_type": ""
+        },
+        {
+            "name": "owner_lock",
+            "args": "0x98765432101234567890",
+            "code_hash": "{{always_success}}",
+            "hash_type": ""
+        },
+        {
+            "name": "community_lock",
+            "args": "0x1111",
+            "code_hash": "{{always_success}}",
+            "hash_type": ""
+        },
+        {
+            "name": "cdp_hash",
+            "args": "{{config_hash}}",
+            "code_hash": "{{cdp}}",
+            "hash_type": ""
+        },
+        {
+            "name": "TAI_type",
+            "args": "{{cdp_hash}}",
+            "code_hash": "{{token}}",
+            "hash_type": ""
+        },
+        {
+            "name": "auction_type",
+            "args": "{{config_hash}}",
+            "code_hash": "{{auction}}",
+            "hash_type": ""
+        },
+        {
+            "name": "burn_lock_hash",
+            "args": "{{TAI_type}}",
+            "code_hash": "{{burn_lock}}",
+            "hash_type": ""
+        },
+        {
+            "name": "auction_lock",
+            "args": "01{{auction_type}}",
+            "code_hash": "{{type_lock}}",
+            "hash_type": ""
+        },
+        {
+            "name": "sys_debt_type",
+            "args": "{{config_hash}}",
+            "code_hash": "{{sys_debt}}",
+            "hash_type": ""
+        }
+    ],
+    "block_list": [
+        {
+            "number": 3684151,
+            "timestamp": 1611326050236,
+            "epoch": 2564,
+            "compact_target": 0,
+            "parent_hash": "",
+            "transactions_root": "",
+            "proposals_hash": "",
+            "uncles_hash": "",
+            "dao": ""
+        }
+    ],
+    "cell_deps": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "description": "burn_lock",
+            "data": "0x02000000{{burn_lock_hash}}",
+            "block_id":3684151
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "description": "TAI",
+            "data": "0x05000000{{TAI_type}}",
+            "block_id":3684151
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "data": "0x07000000{{community_lock}}",
+            "block_id": 3684151
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "description": "staking rate(0.8)=cdcc4c3f, interest(0.8)=cdcc4c3f",
+            "data": "0x1a000000{{user_UDT}}cdcc4c3fcdcc4c3f",
+            "block_id": 3684151
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "data": "0x1b000000000020418cb3aa2f77010000",
+            "description": "price 10.0"
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "data": "0x09000000{{auction_type}}"
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "data": "0x0a000000{{sys_debt_type}}"
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "data": "0x0c000000{{auction_lock}}"
+        }
+    ],
+    "inputs": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "01{{auction_type}}",
+                "code_hash": "{{type_lock}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "{{udt_args}}",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "block_id": 3684151,
+            "data": "0x3c0f0000000000000000000000000000",
+            "out_point": "0xf1d1b3ddcca92b1e49783769e9bf606112b3f8cf36b96cac05bf44edcf5377e601000000"
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "01{{auction_type}}",
+                "code_hash": "{{type_lock}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "{{config_hash}}",
+                "code_hash": "{{auction}}",
+                "hash_type": ""
+            },
+            "block_id": 3684151,
+            "data": "0x011110000000000000000000000000003c0f00000000000000000000000000001a000000{{owner_lock}}",
+            "out_point": "0xf1d1b3ddcca92b1e49783769e9bf606112b3f8cf36b96cac05bf44edcf5377e600000000"
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "0x111111",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "{{cdp_hash}}",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "data": "0x02222000000000000000000000000000"
+        }
+    ],
+    "outputs": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "{{TAI_type}}",
+                "code_hash": "{{burn_lock}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "{{cdp_hash}}",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "data": "0x00111000000000000000000000000000"
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "0x1111",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "{{config_hash}}",
+                "code_hash": "{{sys_debt}}",
+                "hash_type": ""
+            },
+            "data": "0100000000000000000000000000000000"
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "0x11112222",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "{{cdp_hash}}",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "data": "0x02111000000000000000000000000000"
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "0x11112222",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "{{udt_args}}",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "block_id": 3684151,
+            "data": "0x3c0f0000000000000000000000000000",
+            "out_point": "0xf1d1b3ddcca92b1e49783769e9bf606112b3f8cf36b96cac05bf44edcf5377e601000000"
+        }
+    ],
+    "hope_result": {
+        "description": "error line:174,t > MAX_AUCTION_TIME / 2",
+        "error_type": "input",
+        "error_number": -82,
+        "cell_index": 1
+    }
+}

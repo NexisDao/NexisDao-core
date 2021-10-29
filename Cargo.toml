@@ -1,0 +1,22 @@
+[workspace]
+members = [
+    "tests", 
+    "contracts/index", 
+    "contracts/config", 
+    "contracts/type_lock", 
+    "contracts/cdp", 
+    "contracts/token", 
+    "contracts/always_success", 
+    "contracts/debt", 
+    "contracts/auction", 
+    "contracts/sys_debt", 
+    "contracts/dao_info", 
+    "contracts/burn_lock", 
+    "contracts/udt_owner"]
+
+[profile.release]
+overflow-checks = true
+opt-level = 's'
+lto = true
+codegen-units = 1
+panic = 'abort'

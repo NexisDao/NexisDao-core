@@ -1,0 +1,204 @@
+{
+    "name": "002",
+    "contracts": [
+        {
+            "name": "config",
+            "mode": "default",
+            "file": "config"
+        },
+        {
+            "name": "type_lock",
+            "mode": "default",
+            "file": "type_lock"
+        },
+        {
+            "name": "dao",
+            "mode": "default",
+            "file": "dao_info"
+        },
+        {
+            "name": "token",
+            "mode": "default",
+            "file": "token"
+        }
+    ],
+    "script_list": [
+        {
+            "name": "config_hash",
+            "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+            "code_hash": "{{config}}",
+            "hash_type": ""
+        },
+        {
+            "name": "dao_hash",
+            "args": "{{config_hash}}",
+            "code_hash": "{{dao}}",
+            "hash_type": ""
+        },
+        {
+            "name": "my_lock",
+            "args": "{{dao_hash}}",
+            "code_hash": "{{type_lock}}",
+            "hash_type": ""
+        },
+        {
+            "name": "dao_UDT",
+            "args": "{{dao_hash}}",
+            "code_hash": "{{token}}",
+            "hash_type": ""
+        },
+        {
+            "name": "nervos_dao",
+            "args": "0x1234",
+            "code_hash": "{{always_success}}",
+            "hash_type": ""
+        }
+    ],
+    "cell_deps": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "data": "0x03000000{{my_lock}}"
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "description":"dao lock",
+            "data": "0x0d000000{{my_lock}}"
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "description":"nervos dao",
+            "data": "0x0e000000{{nervos_dao}}"
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "description":"dao info",
+            "data": "0x0f000000{{dao_hash}}"
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "description":"dao udt",
+            "data": "0x10000000{{dao_UDT}}"
+        }
+    ],
+    "inputs": [
+        {
+            "capacity": 5000,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "",
+                "code_hash": "",
+                "hash_type": ""
+            },
+            "data": "0x01b00000000000000000000000000000",
+            "out_point": ""
+        }
+    ],
+    "outputs": [
+        {
+            "capacity": 1024,
+            "lock_script": {
+                "args": "{{dao_hash}}",
+                "code_hash": "{{type_lock}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x12345678",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "data": "0x00000000000000000000000000000000",
+            "out_point": ""
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "{{config_hash}}",
+                "code_hash": "{{dao}}",
+                "hash_type": ""
+            },
+            "data": "0x00040000000000000000000000000000",
+            "out_point": ""
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "name": "dCKB",
+                "args": "{{dao_hash}}",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "data": "0x00040000000000000000000000000000",
+            "out_point": ""
+        }
+    ],
+    "hope_result": {
+        "descript": "output0 is not Nervos DAO: error line:83,Some(cfg_script) == output_type",
+        "error_type": "output",
+        "error_number": 83,
+        "cell_index": 1
+    }
+}

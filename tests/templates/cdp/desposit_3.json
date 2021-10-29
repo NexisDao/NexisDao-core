@@ -1,0 +1,300 @@
+{
+    "contracts": [
+        {
+            "name": "config",
+            "mode": "default",
+            "file": "config"
+        },
+        {
+            "name": "type_lock",
+            "mode": "default",
+            "file": "type_lock"
+        },
+        {
+            "name": "cdp",
+            "mode": "default",
+            "file": "cdp"
+        },
+        {
+            "name": "token",
+            "mode": "default",
+            "file": "token"
+        },
+        {
+            "name": "udt_owner",
+            "mode": "default",
+            "file": "udt_owner"
+        }
+    ],
+    "script_list": [
+        {
+            "name": "config_hash",
+            "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+            "code_hash": "{{config}}",
+            "hash_type": ""
+        },
+        {
+            "name": "cdp_hash",
+            "args": "{{config_hash}}",
+            "code_hash": "{{cdp}}",
+            "hash_type": ""
+        },
+        {
+            "name": "cdp_lock",
+            "args": "01{{cdp_hash}}",
+            "code_hash": "{{type_lock}}",
+            "hash_type": ""
+        },
+        {
+            "name": "udt_args",
+            "args": "0x1234567890",
+            "code_hash": "{{always_success}}",
+            "hash_type": ""
+        },
+        {
+            "name": "user_UDT",
+            "args": "{{udt_args}}",
+            "code_hash": "{{token}}",
+            "hash_type": ""
+        },
+        {
+            "name": "udt_creator",
+            "args": "{{config_hash}}04000000",
+            "code_hash": "{{udt_owner}}",
+            "hash_type": ""
+        },
+        {
+            "name": "TAI_UDT",
+            "args": "{{udt_creator}}",
+            "code_hash": "{{token}}",
+            "hash_type": ""
+        }
+    ],
+    "cell_deps": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "description": "IncentiveParam 0.9=6666663f",
+            "data": "0x010000006666663f6666663f"
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "data": "0x03000000{{cdp_lock}}",
+            "out_point": ""
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "data": "0x04000000{{cdp_hash}}",
+            "out_point": ""
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "data": "0x05000000{{TAI_UDT}}",
+            "out_point": ""
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "description": "staking rate(0.8)=cdcc4c3f, interest(0.8)=cdcc4c3f",
+            "data": "0x0a000000{{user_UDT}}cdcc4c3fcdcc4c3f",
+            "out_point": ""
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "data": "0x0b000000000020418cb3aa2f77010000",
+            "description": "price 10.0",
+            "out_point": ""
+        }
+    ],
+    "inputs": [
+        {
+            "capacity": 1500,
+            "lock_script": {
+                "name": "user_lock",
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "",
+                "code_hash": "",
+                "hash_type": ""
+            },
+            "data": "",
+            "out_point": ""
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "name": "user_lock",
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "{{udt_args}}",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "data": "0xff000000000000000000000000000000",
+            "out_point": ""
+        },
+        {
+            "capacity": 1500,
+            "lock_script": {
+                "args": "{{config_hash}}04000000",
+                "code_hash": "{{udt_owner}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "",
+                "code_hash": "",
+                "hash_type": ""
+            },
+            "data": "",
+            "out_point": ""
+        }
+    ],
+    "outputs": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "01{{cdp_hash}}",
+                "code_hash": "{{type_lock}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "{{udt_args}}",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "data": "0xff000000000000000000000000000000",
+            "out_point": ""
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "01{{cdp_hash}}",
+                "code_hash": "{{type_lock}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "{{config_hash}}",
+                "code_hash": "{{cdp}}",
+                "hash_type": ""
+            },
+            "data": "0x01a00000000000000000000000000000ff0000000000000000000000000000000a000000{{user_lock}}ec51383f8cb3aa2f77010000",
+            "out_point": ""
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "{{udt_creator}}",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "data": "0x01a00000000000000000000000000000",
+            "out_point": ""
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "name": "user_lock",
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "",
+                "code_hash": "",
+                "hash_type": ""
+            },
+            "data": "",
+            "out_point": ""
+        },
+        {
+            "capacity": 1500,
+            "lock_script": {
+                "args": "{{config_hash}}04000000",
+                "code_hash": "{{udt_owner}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "",
+                "code_hash": "",
+                "hash_type": ""
+            },
+            "data": "",
+            "out_point": ""
+        }
+    ],
+    "hope_result": {
+        "description": "not enough UDT: error line:208,limit >= tai_amount as f64",
+        "error_type": "output",
+        "error_number": -48,
+        "cell_index": 1
+    }
+}

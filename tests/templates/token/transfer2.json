@@ -1,0 +1,79 @@
+{
+    
+    "contracts": [
+        {
+            "name": "token",
+            "mode": "default",
+            "file": "token"
+        }
+    ],
+    "inputs": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x1234",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "data": "0x08000000000000000000000000000000",
+            "out_point": ""
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x1234",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "data": "0x02000000000000000000000000000000",
+            "out_point": ""
+        }
+    ],
+    "outputs": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x1234",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "data": "0x01000000000000000000000000000000",
+            "out_point": ""
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x1234",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "data": "0x09000000000000000000000000000000",
+            "out_point": ""
+        }
+    ],
+    "hope_result": {
+        "error_type": "",
+        "error_number": 0,
+        "cell_index": 0
+    }
+}

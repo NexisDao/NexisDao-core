@@ -1,0 +1,63 @@
+{
+    
+    "contracts": [
+        {
+            "name": "config",
+            "mode": "default",
+            "file": "config"
+        },
+        {
+            "name": "type_lock",
+            "mode": "default",
+            "file": "type_lock"
+        }
+    ],
+    "script_list": [
+        {
+            "name": "config_hash",
+            "args": "0x5c5a140e6a20bbc3c836ef4b6d895f687f020f248f4fa146579f130198ecaac0",
+            "code_hash": "{{config}}",
+            "hash_type": ""
+        }
+    ],
+    "inputs": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "{{config_hash}}",
+                "code_hash": "{{type_lock}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "",
+                "code_hash": "",
+                "hash_type": ""
+            },
+            "data": "0x01000000aaaa",
+            "out_point": ""
+        }
+    ],
+    "outputs": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "",
+                "code_hash": "",
+                "hash_type": ""
+            },
+            "data": "0x01000000bbbbbb",
+            "out_point": ""
+        }
+    ],
+    "hope_result": {
+        "description": "type hash not found",
+        "error_type": "lock",
+        "error_number": 6,
+        "cell_index": 0
+    }
+}

@@ -1,0 +1,78 @@
+{
+    
+    "contracts": [
+        {
+            "name": "index",
+            "mode": "default",
+            "file": "index"
+        },
+        {
+            "name": "config",
+            "mode": "default",
+            "file": "config"
+        }
+    ],
+    "script_list": [
+        {
+            "name": "index_hash",
+            "args": "0xf1d1b3ddcca92b1e49783769e9bf606112b3f8cf36b96cac05bf44edcf5377e600000000",
+            "code_hash": "{{index}}",
+            "hash_type": ""
+        }
+    ],
+    "inputs": [
+        {
+            "capacity": 1000,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0xf1d1b3ddcca92b1e49783769e9bf606112b3f8cf36b96cac05bf44edcf5377e600000000",
+                "code_hash": "{{index}}",
+                "hash_type": ""
+            },
+            "data": "0x01000000",
+            "out_point": "0xf2d1b3ddcca92b1e49783769e9bf606112b3f8cf36b96cac05bf44edcf5377e600000000"
+        }
+    ],
+    "outputs": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0xf1d1b3ddcca92b1e49783769e9bf606112b3f8cf36b96cac05bf44edcf5377e600000000",
+                "code_hash": "{{index}}",
+                "hash_type": ""
+            },
+            "data": "0x02000000",
+            "out_point": ""
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "{{index_hash}}",
+                "code_hash": "{{config}}",
+                "hash_type": ""
+            },
+            "data": "0x010000",
+            "out_point": ""
+        }
+    ],
+    "hope_result": {
+        "description": "error length of config data",
+        "error_type": "output",
+        "error_number": -1,
+        "cell_index": 1
+    }
+}

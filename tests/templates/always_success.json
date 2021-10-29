@@ -1,0 +1,40 @@
+{
+    "name":"always_success",
+    "inputs": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "",
+                "code_hash": "",
+                "hash_type": ""
+            },
+            "data": ""
+        }
+    ],
+    "outputs": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "",
+                "code_hash": "",
+                "hash_type": ""
+            },
+            "data": ""
+        }
+    ],
+    "hope_result":{
+        "error_type":"",
+        "error_number":0,
+        "cell_index":0
+    }
+}

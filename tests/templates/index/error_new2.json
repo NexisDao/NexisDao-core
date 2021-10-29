@@ -1,0 +1,65 @@
+{
+    
+    "contracts": [
+        {
+            "name": "index",
+            "mode": "default",
+            "file": "index"
+        }
+    ],
+    "inputs": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "",
+                "code_hash": "",
+                "hash_type": ""
+            },
+            "data": "0x01000000",
+            "out_point": "0xf1d1b3ddcca92b1e49783769e9bf606112b3f8cf36b96cac05bf44edcf5377e600000000"
+        }
+    ],
+    "outputs": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0xf1d1b3ddcca92b1e49783769e9bf606112b3f8cf36b96cac05bf44edcf5377e600000000",
+                "code_hash": "{{index}}",
+                "hash_type": ""
+            },
+            "data": "0x01000000",
+            "out_point": ""
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0xf1d1b3ddcca92b1e49783769e9bf606112b3f8cf36b96cac05bf44edcf5377e600000000",
+                "code_hash": "{{index}}",
+                "hash_type": ""
+            },
+            "data": "0x01000000",
+            "out_point": ""
+        }
+    ],
+    "hope_result": {
+        "description": "more than one output",
+        "error_type": "output",
+        "error_number": 5,
+        "cell_index": 0
+    }
+}

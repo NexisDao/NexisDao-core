@@ -1,0 +1,78 @@
+{
+    
+    "contracts": [
+        {
+            "name": "token",
+            "mode": "default",
+            "file": "token"
+        },
+        {
+            "name": "burn_lock",
+            "mode": "default",
+            "file": "burn_lock"
+        }
+    ],
+    "script_list": [
+        {
+            "name": "TAI_type",
+            "args": "0x1234567890",
+            "code_hash": "{{token}}",
+            "hash_type": ""
+        }
+    ],
+    "block_list": [
+    ],
+    "cell_deps": [
+    ],
+    "inputs": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "{{TAI_type}}",
+                "code_hash": "{{burn_lock}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x1234567890",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "data": "0x01000000000000000000000000000000"
+        },
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "0x1111",
+                "code_hash": "{{always_success}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x1234567890",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "data": "0x01000000000000000000000000000000"
+        }
+    ],
+    "outputs": [
+        {
+            "capacity": 500,
+            "lock_script": {
+                "args": "{{TAI_type}}",
+                "code_hash": "{{burn_lock}}",
+                "hash_type": ""
+            },
+            "type_script": {
+                "args": "0x1234567890",
+                "code_hash": "{{token}}",
+                "hash_type": ""
+            },
+            "data": "0x02000000000000000000000000000000"
+        }
+    ],
+    "hope_result": {
+        "error_type": "",
+        "error_number": 0,
+        "cell_index": 0
+    }
+}
